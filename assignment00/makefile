@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-std=gnu99 -O1
+CFLAGS_SANITIZE=-std=gnu99 -O1 -fsanitize=address
 
 TARGETS = 
 TARGETS += test
@@ -7,8 +7,8 @@ TARGETS += test
 all: $(TARGETS)
 
 %: %.c clean
-	$(CC) $(CFLAGS) -o $@ $<
-	valgrind -q --leak-check=full ./$@
+	$(CC) $(CFLAGS_SANITIZE) -o $@ $<
+	./$@
 
 clean: 
 	rm -f $(TARGETS)
