@@ -38,12 +38,14 @@ void test_string_cmp();
 void test_string_length();
 void test_string_reverse();
 void test_string_list_sort();
+void test_string_remove_char();
 
 int main() {
     test_string_cmp();
     test_string_length();
     test_string_reverse();
     test_string_list_sort();
+    test_string_remove_char();
     printf("ALL TESTS PASS!\n");
     return 0;
 }
@@ -192,4 +194,35 @@ void test_string_list_sort() {
         }
     }
     printf("test_string_list PASS!\n");
+}
+
+void test_string_remove_char(){
+    {
+        char word[] = "abab";
+        string_remove_char(word, 'a');
+        assert_true(strcmp(word, "bb") == 0, "should be bb");
+    }
+    {
+        char word[] = "abab";
+        string_remove_char(word, 'b');
+        assert_true(strcmp(word, "aa") == 0, "should be bb");
+    }
+    {
+        char word[] = "ccc";
+        string_remove_char(word, 'c');
+        assert_true(strcmp(word, "") == 0, "should be ''");
+    }
+    {
+        char word[] = "c c c";
+        string_remove_char(word, 'c');
+        assert_true(strcmp(word, "  ") == 0, "should be '  '");
+    }
+        {
+        char word[] = " \n \n";
+        string_remove_char(word, ' ');
+        assert_true(strcmp(word, "\n\n") == 0, "should be '\\n\\n'");
+    }
+
+
+    printf("test_string_remove_char PASS!\n");
 }

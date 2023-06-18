@@ -17,6 +17,9 @@ void string_reverse(char* s);
 //                      (maxWordLength specifies max length of each string)
 void string_list_sort(char** arr, size_t arrLength, size_t maxWordLength);
 
+// remove all occurances of char x from string s
+void string_remove_char(char* s, char x);
+
 
 /*
     IMPLEMENTATIONS
@@ -38,4 +41,7 @@ void string_reverse(char* s){
 // use qsort(), qsort is defined in <csdlib.h>
 // use string_cmp after implementing
 void string_list_sort(char** arr, size_t arrLength, size_t maxWordLength){
+}
+
+void string_remove_char(char* s, char x){
 }
