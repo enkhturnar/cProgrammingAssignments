@@ -193,7 +193,7 @@ void test_string_list_sort() {
             assert_true(strcmp(words[i], sorted[i]) == 0, "sort order incorrect");
         }
     }
-    printf("test_string_list PASS!\n");
+    printf("test_string_list_sort PASS!\n");
 }
 
 void test_string_remove_char(){

@@ -57,13 +57,53 @@ size_t string_length(char* s){
 }
 
 void string_reverse(char* s){
-
+    char* ptr;
+    ptr = s;
+    char* newptr;
+    newptr = s;
+    if (*s == '\0'){
+        return;
+    }
+    while (*s != '\0'){
+        s++;
+    }
+    s--;
+    while (ptr < s){
+        char t;
+        t = *ptr;
+        *ptr = *s;
+        *s = t;
+        ptr++;
+        s--;
+    }
+    s = newptr;
+    return;
 }
 
-// use qsort(), qsort is defined in <csdlib.h>
+int cmp(const void* p1, const void* p2){
+    const char* new1 = p1;
+    const char* new2 = p2;
+    return string_cmp(new1, new2);
+};
+
 // use string_cmp after implementing
 void string_list_sort(char** arr, size_t arrLength, size_t maxWordLength){
+    return qsort(arr, arrLength, maxWordLength, cmp);
 }
 
 void string_remove_char(char* s, char x){
+    char* ptr;
+    ptr = s;
+    while (*s != '\0'){
+        if (*s == x){
+            s++;
+        }
+        else{
+            *ptr = *s;
+            s++;
+            ptr++;
+        }
+    }
+    *ptr = '\0';
+    return;
 }
