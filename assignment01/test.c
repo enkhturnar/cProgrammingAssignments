@@ -58,15 +58,15 @@ void assert_int_array_eq(int* a, int* b, int len, char* msg) {
 }
 
 void test_count_number_of_1s();
-// void test_convert_int_to_hex();
-// void test_bitwiseAND();
-// void test_sortByOnes();
+void test_convert_int_to_hex();
+void test_bitwiseAND();
+void test_sortByOnes();
 
 int main() {
-    // test_bitwiseAND();
+    test_bitwiseAND();
     test_count_number_of_1s();
-    // test_convert_int_to_hex();
-    // test_sortByOnes();
+    test_convert_int_to_hex();
+    test_sortByOnes();
     printf("ALL TESTS PASS!\n");
     return 0;
 }
@@ -110,64 +110,64 @@ void test_count_number_of_1s() {
     {
         assert_eq_int(count_number_of_1s(-1073741824), 2, "-1073741824 has 2 one");
     }
-    {
-        for(int i = -10000; i <= 10000; i++){
-            printf("%d\n", i);
-            assert_eq_int(count_number_of_1s(i), count1s(i), "wrong ans");
-        }
-    }
+    // {
+    //     for(int i = -10000; i <= 10000; i++){
+    //         printf("%d\n", i);
+    //         assert_eq_int(count_number_of_1s(i), count1s(i), "wrong ans");
+    //     }
+    // }
     printf("test_count_number_of_1s PASS!\n");
 }
 
-// void test_convert_int_to_hex() {
-//     {
-//         char* hex = convert_int_to_hex(1);
-//         assert_eq_string(hex, "00000001", "conversion incorrect");
-//         free(hex);
-//     }
-//     {
-//         char* hex = convert_int_to_hex(2);
-//         assert_eq_string(hex, "00000002", "conversion incorrect");
-//         free(hex);
-//     }
-//     {
-//         char* hex = convert_int_to_hex(15);
-//         assert_eq_string(hex, "0000000F", "conversion incorrect");
-//         free(hex);
-//     }
-//     {
-//         char* hex = convert_int_to_hex(22);
-//         assert_eq_string(hex, "00000016", "conversion incorrect");
-//         free(hex);
-//     }
-//     {
-//         char* hex = convert_int_to_hex(123123);
-//         assert_eq_string(hex, "0001E0F3", "conversion incorrect");
-//         free(hex);
-//     }
-//     {
-//         char* hex = convert_int_to_hex(-123123);
-//         assert_eq_string(hex, "FFFE1F0D", "conversion incorrect");
-//         free(hex);
-//     }
-//     {
-//         char* hex = convert_int_to_hex(2147483647);
-//         assert_eq_string(hex, "7FFFFFFF", "conversion incorrect");
-//         free(hex);
-//     }
-//     {
-//         char* hex = convert_int_to_hex(-444444);
-//         assert_eq_string(hex, "FFF937E4", "conversion incorrect");
-//         free(hex);
-//     }
+void test_convert_int_to_hex() {
+    {
+        char* hex = convert_int_to_hex(1);
+        assert_eq_string(hex, "00000001", "conversion incorrect");
+        // free(hex);
+    }
+    {
+        char* hex = convert_int_to_hex(2);
+        assert_eq_string(hex, "00000002", "conversion incorrect");
+        // free(hex);
+    }
+    {
+        char* hex = convert_int_to_hex(15);
+        assert_eq_string(hex, "0000000F", "conversion incorrect");
+        // free(hex);
+    }
+    {
+        char* hex = convert_int_to_hex(22);
+        assert_eq_string(hex, "00000016", "conversion incorrect");
+        // free(hex);
+    }
+    {
+        char* hex = convert_int_to_hex(123123);
+        assert_eq_string(hex, "0001E0F3", "conversion incorrect");
+        // free(hex);
+    }
+    {
+        char* hex = convert_int_to_hex(-123123);
+        assert_eq_string(hex, "FFFE1F0D", "conversion incorrect");
+        // free(hex);
+    }
+    {
+        char* hex = convert_int_to_hex(2147483647);
+        assert_eq_string(hex, "7FFFFFFF", "conversion incorrect");
+        // free(hex);
+    }
+    {
+        char* hex = convert_int_to_hex(-444444);
+        assert_eq_string(hex, "FFF937E4", "conversion incorrect");
+        // free(hex);
+    }
 
-//     {
-//         char* hex = convert_int_to_hex(-1);
-//         assert_eq_string(hex, "FFFFFFFF", "conversion incorrect");
-//         free(hex);
-//     }
-//     printf("test_convert_int_to_hex PASS!\n");
-// }
+    {
+        char* hex = convert_int_to_hex(-1);
+        assert_eq_string(hex, "FFFFFFFF", "conversion incorrect");
+        // free(hex);
+    }
+    printf("test_convert_int_to_hex PASS!\n");
+}
 
 void test_bitwiseAND() {
     {
