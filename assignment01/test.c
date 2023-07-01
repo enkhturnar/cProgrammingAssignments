@@ -123,48 +123,48 @@ void test_convert_int_to_hex() {
     {
         char* hex = convert_int_to_hex(1);
         assert_eq_string(hex, "00000001", "conversion incorrect");
-        // free(hex);
+        free(hex);
     }
     {
         char* hex = convert_int_to_hex(2);
         assert_eq_string(hex, "00000002", "conversion incorrect");
-        // free(hex);
+        free(hex);
     }
     {
         char* hex = convert_int_to_hex(15);
         assert_eq_string(hex, "0000000F", "conversion incorrect");
-        // free(hex);
+        free(hex);
     }
     {
         char* hex = convert_int_to_hex(22);
         assert_eq_string(hex, "00000016", "conversion incorrect");
-        // free(hex);
+        free(hex);
     }
     {
         char* hex = convert_int_to_hex(123123);
         assert_eq_string(hex, "0001E0F3", "conversion incorrect");
-        // free(hex);
+        free(hex);
     }
     {
         char* hex = convert_int_to_hex(-123123);
         assert_eq_string(hex, "FFFE1F0D", "conversion incorrect");
-        // free(hex);
+        free(hex);
     }
     {
         char* hex = convert_int_to_hex(2147483647);
         assert_eq_string(hex, "7FFFFFFF", "conversion incorrect");
-        // free(hex);
+        free(hex);
     }
     {
         char* hex = convert_int_to_hex(-444444);
         assert_eq_string(hex, "FFF937E4", "conversion incorrect");
-        // free(hex);
+        free(hex);
     }
 
     {
         char* hex = convert_int_to_hex(-1);
         assert_eq_string(hex, "FFFFFFFF", "conversion incorrect");
-        // free(hex);
+        free(hex);
     }
     printf("test_convert_int_to_hex PASS!\n");
 }

@@ -93,10 +93,9 @@ char* convert_int_to_hex(int x){
     else {
         binary[idx] = '0';
     }
-    char hex[9];
+    char* hex = malloc(9 * sizeof(char));
     hex[8] = '\0';
     int index = 0;
-
     for (int i = 0; i < 32; i += 4){
         int sum = 0;
         if (binary[i] == '1'){
@@ -161,8 +160,7 @@ char* convert_int_to_hex(int x){
         }
         index++;
     }
-    char* ptr = hex;
-    return ptr;
+    return hex;
 }
 
 int compare(const void* a, const void* b){
