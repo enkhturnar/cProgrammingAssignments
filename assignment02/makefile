@@ -5,7 +5,7 @@ CFLAGS=-std=gnu99 -O1
 
 TARGETS = 
 TARGETS += test_linked_list
-TARGETS += test
+# TARGETS += test
 
 all: $(TARGETS)
 

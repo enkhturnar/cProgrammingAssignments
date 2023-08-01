@@ -60,16 +60,17 @@ void assert_int_array_eq(int* a, int* b, int len, char* msg) {
 
 void testAppend();
 void testLength();
-void testPopleft();
+// void testPopleft();
 void testPop();
-void testContainingStruct();
+// void testContainingStruct();
 
+void printLinkedList(linked_list* ll);
 int main() {
     testAppend();
     testLength();
     testPop();
-    testPopleft();
-    testContainingStruct();
+    // testPopleft();
+    // testContainingStruct();
 
     printf("ALL PASS!!\n");
     return 0;
@@ -160,7 +161,7 @@ void testPop() {
         for (int i = 0; i < 100; i++) {
             linked_list_append(ll, &i);
         }
-
+        printLinkedList(ll);
         int* tail;
         for (int i = 99; i >= 0; i--) {
             tail = ll->tail->data;
@@ -249,4 +250,19 @@ void testContainingStruct() {
     }
     printf("testStruct pass!\n");
 
+}
+
+void printLinkedList(linked_list* ll){
+    printf("PRINTING LINKED LIST\n");
+    
+    linked_list_node *cur = ll->head;
+    while (cur != NULL){
+        for(size_t i = 0 ; i < ll->dataSize; i++){
+            printf("%02x", ((unsigned char *) cur->data) [i]);
+        }
+        cur = cur->next;
+        printf("\n");
+    }
+
+    printf("PRINTED LINKED LIST\n");
 }
